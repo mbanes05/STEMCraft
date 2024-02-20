@@ -1,2 +1,2 @@
 # STEMCraft
-NSBE 1 Hour Hackathon: Todo List
+NSBE 1 Hour Hackathon: To do List
