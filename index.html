@@ -5,17 +5,42 @@
         <title>To do List</title>
     </head>
     <body>
-        <div style="display: grid; place-items: center;">
+        <div style="text-align: center;">
             <H1>To do List</H1>
             <input type="text" id="taskInput" placeholder="Enter task">
-            <button id="addTaskButton">Add Task</button>
-
-            <ul id="tasklist"><h2>My Tasks</h2></strong>
-                <li>1st Task</li>
-                <li>2st Task</li>
-                <li>3rd Task</li>
-            </ul>
+            <button id="addTaskButton" onclick="addTask()">Add Task</button>
         </div>
+
+
+        <style>
+            ul {text-align: center;
+            list-style-position: inside;}
+        </style>
+
+        <ul id="taskList"><h2>My Tasks</h2>
+        </ul>
+
+        <script>
+            function addTask() {
+                // Get the input value
+                var taskInput = document.getElementById("taskInput");
+                var taskText = taskInput.value;
+
+                // If the input is not empty, proceed to add the task
+                if (taskText.trim() !== "") {
+                    // Create a new list item
+                    var listItem = document.createElement("li");
+                    listItem.textContent = taskText;
+
+                    // Append the new list item to the task list
+                    var taskList = document.getElementById("taskList");
+                    taskList.appendChild(listItem);
+
+                    // Clear the input for the next task
+                    taskInput.value = "";
+                }
+            }
+        </script>
 
     </body>
 </html>
